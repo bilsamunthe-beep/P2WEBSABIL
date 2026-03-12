@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Muhammad Syabil Munthe</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    /* 1. VARIABLE & THEME */
+    :root {
+      --primary-red: #8b0909;
+      --secondary-red: #c02014;
+      --bg-light: #ffffff;
+      --text-dark: #212529;
+      --card-bg: #ffffff;
+      --transition: all 0.3s ease;
+    }
+
+    /* Dark Mode Variables */
+    body.dark-theme {
+      --bg-light: #0f0c29;
+      --text-dark: #ffffff;
+      --card-bg: #1a1a2e;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      transition: var(--transition);
+      overflow-x: hidden;
+    }
+
+    /* 2. NAVBAR & TOGGLE */
+    .theme-loader {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 1000;
+      background: var(--primary-red);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    /* 3. HERO SECTION */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #8b0909, #4b0a05);
+      color: white;
+      padding: 100px 0;
+    }
+
+    body.dark-theme .hero {
+      background: linear-gradient(135deg, #0f0c29, #1a1a2e);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .hero-img-container img {
+      width: 320px;
+      border-radius: 30px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      animation: float 3s ease-in-out infinite;
+      border: 4px solid rgba(255,255,255,0.1);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* 4. CARDS (SKILLS & PROJECTS) */
+    .section-title {
+      font-weight: 700;
+      color: var(--secondary-red);
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .skills__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card, .project-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 30px;
+      border: 1px solid rgba(0,0,0,0.05);
+      transition: var(--transition);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    body.dark-theme .skill-card, 
+    body.dark-theme .project-card {
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .skill-card:hover, .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(139, 9, 9, 0.2);
+      border-color: var(--secondary-red);
+    }
+
+    /* 5. BUTTONS */
+    .btn-primary {
+      background: var(--primary-red);
+      border: none;
+      padding: 12px 30px;
+      border-radius: 50px;
+      transition: var(--transition);
+    }
+
+    .btn-primary:hover {
+      background: var(--secondary-red);
+      transform: scale(1.05);
+    }
+
+    /* 6. FOOTER */
+    .footer {
+      background: #111;
+      color: white;
+      padding: 60px 0 20px;
+      text-align: center;
+    }
+
+    .footer a {
+      color: #aaa;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .footer a:hover { color: white; }
+  </style>
+</head>
+<body>
+
+  <div class="theme-loader" id="themeToggle">
+    <i class="fas fa-moon"></i>
+  </div>
+
+  <section id="hero" class="hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7" data-aos="fade-right">
+          <span class="badge bg-light text-dark mb-3 px-3 py-2 rounded-pill">Available for Work</span>
+          <h1 class="display-3 fw-bold mb-3">Hi, saya <span style="color: #ff4b5c;">Syabil Munthe</span></h1>
+          <h2 class="h3 mb-4 opacity-75">Web Developer & Mahasiswa Sistem Informasi</h2>
+          <div class="d-flex gap-3">
+            <a href="#projects" class="btn btn-primary btn-lg">Lihat Portofolio</a>
+            <button class="btn btn-outline-light btn-lg rounded-pill" onclick="openContact()">Hubungi Saya</button>
+          </div>
+        </div>
+        <div class="col-lg-5 text-center mt-5 mt-lg-0" data-aos="zoom-in">
+          <div class="hero-img-container">
+            <img src="image/WhatsApp Image 2026-03-11 at 07.37.07.jpeg" alt="Syabil">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5" id="about">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Keahlian Saya</h2>
+      <div class="skills__grid">
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="h1 text-danger mb-3"><i class="fab fa-html5"></i></div>
+          <h3>HTML5 & CSS3</h3>
+          <p>Membangun struktur web yang responsif dan modern.</p>
+        </div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="h1 text-warning mb-3"><i class="fab fa-js"></i></div>
+          <h3>JavaScript</h3>
+          <p>Menambahkan interaktivitas dan logika pada sisi klien.</p>
+        </div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="h1 text-info mb-3"><i class="fab fa-react"></i></div>
+          <h3>React JS</h3>
+          <p>Pengembangan aplikasi berbasis komponen yang efisien.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="py-5 bg-opacity-10 bg-secondary">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Project Terkini</h2>
+      <div class="row g-4">
+        <div class="col-md-6" data-aos="flip-left">
+          <div class="project-card">
+            <img src="image/WhatsApp Image 2026-03-11 at 08.53.40.jpeg" class="img-fluid rounded-4 mb-3" alt="Project 1">
+            <h5>Sistem Pendaftaran Mahasiswa</h5>
+            <p>Aplikasi berbasis desktop untuk manajemen data mahasiswa.</p>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="flip-right">
+          <div class="project-card">
+            <img src="image/WhatsApp Image 2026-03-10 at 09.17.50 (1).jpeg" class="img-fluid rounded-4 mb-3" alt="Project 2">
+            <h5>Kalkulator Rumus Balok</h5>
+            <p>Implementasi logika matematika OOP dalam pemrograman.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="mb-4">
+        <a href="#"><i class="fab fa-instagram"></i> @sabilmunthe</a>
+        <a href="mailto:raflyrafly0506@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+        <a href="https://wa.me/6281374323620"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
+      <p class="opacity-50">© 2026 Muhammad Syabil Munthe. Dibuat dengan Passion.</p>
+    </div>
+  </footer>
+
+  <div class="modal fade" id="contactModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content shadow-lg border-0" style="border-radius: 20px;">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold">Kirim Pesan Langsung</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="waForm">
+            <div class="mb-3">
+              <input type="text" id="name" class="form-control p-3" placeholder="Nama Anda" required>
+            </div>
+            <div class="mb-3">
+              <textarea id="message" class="form-control p-3" rows="3" placeholder="Apa yang bisa saya bantu?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 py-3">Kirim ke WhatsApp</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <script>
+    // Inisialisasi AOS (Fitur 3: Animasi)
+    AOS.init({ duration: 1000, once: true });
+
+    // Dark Mode Logic
+    const themeToggle = document.getElementById('themeToggle');
+    const icon = themeToggle.querySelector('i');
+
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-theme');
+      if(document.body.classList.contains('dark-theme')) {
+        icon.classList.replace('fa-moon', 'fa-sun');
+      } else {
+        icon.classList.replace('fa-sun', 'fa-moon');
+      }
+    });
+
+    // Contact Modal & WhatsApp Redirect
+    const contactModal = new bootstrap.Modal(document.getElementById('contactModal'));
+    
+    function openContact() {
+      contactModal.show();
+    }
+
+    document.getElementById('waForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const msg = document.getElementById('message').value;
+      const phone = "6281374323620"; 
+      const url = `https://wa.me/${phone}?text=Halo Syabil, saya ${name}. %0A%0A${msg}`;
+      window.open(url, '_blank');
+    });
+  </script>
+</body>
+</html>
